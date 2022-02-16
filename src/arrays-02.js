@@ -41,7 +41,7 @@
  * @returns {string} - the character at the index
  */
 function findTheCharacterAtIndex(str, indx) {
-  // write your code here & return value
+  return str[indx];
 }
 
 /**
@@ -52,7 +52,8 @@ function findTheCharacterAtIndex(str, indx) {
  * @returns {string} - the sliced string
  */
 function sliceTheString(str, start, end) {
-  // write your code here & return value
+  const slicedString = str.slice(start, end);
+  return slicedString;
 }
 
 /**
@@ -62,7 +63,8 @@ function sliceTheString(str, start, end) {
  * @returns {array} - the array of substrings
  */
 function splitTheString(str, separator) {
-  // write your code here & return value
+  const subString = str.split(separator);
+  return subString;
 }
 
 /**
@@ -71,7 +73,8 @@ function splitTheString(str, separator) {
  * @returns {string} - the string with all the letters in uppercase
  */
 function makeAllUpperCase(str) {
-  // write your code here & return value
+  const upperString = str.toUpperCase();
+  return upperString;
 }
 
 /**
@@ -80,7 +83,8 @@ function makeAllUpperCase(str) {
  * @returns {string} - the string with all the letters lowercase
  */
 function makeAllLowerCase(str) {
-  // write your code here & return value
+  const lowerString = str.toLowerCase();
+  return lowerString;
 }
 
 /**
@@ -92,7 +96,7 @@ function makeAllLowerCase(str) {
  * ? ex: 'HELLO' => 'Hello'
  */
 function makeWordTitleCase(word) {
-  // write your code here & return value
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 }
 
 /**
@@ -104,7 +108,8 @@ function makeWordTitleCase(word) {
  * ? ex: 'hello world', 'hello', 'hi' => 'hi world'
  */
 function replaceTheString(str, oldStr, newStr) {
-  // write your code here & return value
+  const replacedString = str.replace(oldStr, newStr);
+  return replacedString;
 }
 
 /**
@@ -116,7 +121,10 @@ function replaceTheString(str, oldStr, newStr) {
  * ? hint: use split() and makeWordTitleCase()
  */
 function makeSentenceTitleCase(sentence) {
-  // write your code here & return value
+  const words = sentence.split(' ');
+  const capSentence = words.map(makeWordTitleCase);
+  return capSentence.join(' ');
+
 }
 
 module.exports = {

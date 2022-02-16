@@ -8,6 +8,8 @@
  *
  */
 
+const { addUpArrayElements } = require("./arrays-03");
+
 /**
  * Returns the sum the absolute values of the numbers in the array
  * @param {array} nums - the array of numbers
@@ -16,7 +18,9 @@
  * ? hint: use Math.abs() to get the absolute value of a number
  */
 function getAbsoluteSum(nums) {
-  // write your code here & return value
+  const absoluteArray = nums.map(y => Math.abs(y));
+  const total = addUpArrayElements(absoluteArray);
+  return total;
 }
 
 /**
@@ -27,7 +31,9 @@ function getAbsoluteSum(nums) {
  * ? hint: use the filter() array method - https://youtu.be/JY5HUDMudew
  */
 function removeStrings(arr) {
-  // write your code here & return value
+  const nonNumbers = arr.filter(x => typeof x === "number");
+  const numbers = [...nonNumbers];
+  return numbers;
 }
 
 /**
@@ -49,7 +55,10 @@ function removeStrings(arr) {
  * ? hint 2: use the spread operator with Math.min() and Math.max()
  */
 function findMinMax(arr) {
-  // write your code here & return value
+  const max = Math.max(...arr);
+  const min = Math.min(...arr);
+  const minmaxArray = [min, max];
+  return minmaxArray;
 }
 
 /**
@@ -73,7 +82,13 @@ function findMinMax(arr) {
  * ? https://bit.ly/39ASLc0
  */
 function getTelNo(numbers) {
-  // write your code here & return value
+  const phoneNum = [...numbers];
+  phoneNum.unshift("(");
+  phoneNum.splice(4, 0, ")");
+  phoneNum.splice(5, 0, " ");
+  phoneNum.splice(9, 0, "-");
+  const formatPhone = phoneNum.join('');
+  return formatPhone;
 }
 
 module.exports = {
